@@ -1,0 +1,63 @@
+@use 'variables.scss';
+@use 'z-index.scss';
+@use 'animations.scss';
+@use 'components/terminal.scss';
+@use 'components/resize-handle.scss';
+@use 'components/code.scss';
+@use 'components/editor.scss';
+@use 'components/toast.scss';
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+// Estilos personalizados para scrollbars
+::-webkit-scrollbar {
+  width: 6px;  // Largura muito fina
+  height: 6px; // Altura para scrollbars horizontais
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1); // Fundo semi-transparente
+  backdrop-filter: blur(10px); // Efeito de blur
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bolt-elements-textSecondary); // Cor da thumb baseada no tema
+  background-clip: padding-box; // Previne que o background extrapole os limites
+  border-radius: 10px;
+  transition: background 0.3s ease;
+  backdrop-filter: blur(5px); // Efeito de blur adicional na thumb
+  border: 1px solid transparent; // Ajuda na renderização do backdrop-filter
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bolt-elements-textPrimary); // Cor mais clara no hover
+}
+
+// Estilos para scrollbars no Firefox (sem suporte para backdrop-filter)
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--bolt-elements-textSecondary) rgba(255, 255, 255, 0.1);
+}
+
+// Fallback para navegadores sem suporte a backdrop-filter
+@supports not (backdrop-filter: blur(10px)) {
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2); // Fundo mais opaco como alternativa
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--bolt-elements-textSecondary); // Cor sólida
+  }
+}
+
+:root {
+  --gradient-opacity: 0.8;
+  --primary-color: rgba(251, 146, 60, var(--gradient-opacity));   // Soft Orange
+  --secondary-color: rgba(234, 88, 12, var(--gradient-opacity));  // Dark Orange
+  --accent-color: rgba(249, 115, 22, var(--gradient-opacity));    // Primary Orange
+}
