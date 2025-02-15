@@ -90,6 +90,10 @@ export default defineConfig((config) => {
       __PKG_PEER_DEPENDENCIES: JSON.stringify(pkg.peerDependencies),
       __PKG_OPTIONAL_DEPENDENCIES: JSON.stringify(pkg.optionalDependencies),
     },
+    server: {
+      host: '0.0.0.0', // Escuta em todos os IPs disponíveis
+      allowedHosts: ['chat.vorttek.com.br'],
+    },
     build: {
       target: 'esnext',
     },
