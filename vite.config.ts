@@ -91,8 +91,7 @@ export default defineConfig((config) => {
       __PKG_OPTIONAL_DEPENDENCIES: JSON.stringify(pkg.optionalDependencies),
     },
     server: {
-      host: '0.0.0.0', // Escuta em todos os IPs disponíveis
-      allowedHosts: ['chat.vorttek.com.br'],
+      allowedHosts: ['chat.vorttek.com.br', 'vorttekagents-bltvttk.pbh75s.easypanel.host', 'vorttekagents-boltdiy.pbh75s.easypanel.host'],
     },
     build: {
       target: 'esnext',
