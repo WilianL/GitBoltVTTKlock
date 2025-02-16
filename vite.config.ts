@@ -91,7 +91,6 @@ export default defineConfig((config) => {
       __PKG_OPTIONAL_DEPENDENCIES: JSON.stringify(pkg.optionalDependencies),
     },
     server: {
-      host: '192.168.0.17',
       allowedHosts: ['chat.vorttek.com.br', 'vorttekagents-bltvttk.pbh75s.easypanel.host', 'vorttekagents-boltdiy.pbh75s.easypanel.host'],
     },
     build: {
